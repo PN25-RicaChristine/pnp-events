@@ -1,0 +1,7 @@
+<h4>Event Title: {{event.name}}</h4>
+<p><b>Category:</b> {{event?.category}}</p>
+<p *ngIf="event.speaker"><b>Speaker:</b> {{event?.speaker}}</p>
+<p *ngIf="event.emcee"><b>Emcee:</b> {{event?.emcee}}</p>
+<p><b>Time:</b> {{event?.time}}</p>
+<p><b>Date:</b> {{event?.date}}</p>
+<button class="btn btn-primary" (click)= "sendId(event.id)">View Details</button>
