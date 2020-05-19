@@ -1,29 +1,52 @@
 #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 20px
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 15px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding: 17px;
-    text-align: left;
-    background-color: #04719c;
-    color: white;
-  }
-  button{
-    border-radius: 10px;
-    background-color: #74071f;
-    padding: 8px 15px 8px 15px;
-    color: white;
-    float: right;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#customers td,
+#customers th {
+  /* border: 1px solid #ddd; */
+  padding: 15px;
+  border-radius: 10px;
+
+
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:nth-child(odd) {
+  background-color: #d0e5eb;
+}
+
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding: 17px;
+  text-align: left;
+  background-color: #04719c;
+  color: white;
+
+}
+
+.back {
+  border-radius: 10px;
+  background-color: #74071f;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  float: right;
+}
+
+.add {
+  border-radius: 10px;
+  background-color:  #03923a;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  float: left;
 }

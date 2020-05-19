@@ -1,16 +1,86 @@
 <div>
-    <h2>Participants</h2>
-    <table id="customers">
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Company</th>
-        </tr>
-        <tr *ngFor="let participant of event">
-            <td>{{participant.fullName}}</td>
-            <td>{{participant.position}}</td>
-            <td>{{participant.company}}</td>
-        </tr>
-    </table>
-    <button (click)="backBtn()">Back</button>
+  <h2>Participants</h2>
+  <table id="customers">
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Company</th>
+    </tr>
+    <tr *ngFor="let participant of event">
+      <td>{{participant.fullName}}</td>
+      <td>{{participant.position}}</td>
+      <td>{{participant.company}}</td>
+    </tr>
+  </table>
+  <button class="back" (click)="backBtn()">Back</button>
+
+  <button class="add" type="button" data-toggle="modal" data-target="#myModal">Add Participant</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit(); addForm.reset()" #addForm="ngForm">
+          <label for="firstname">Firstname</label>
+          <input type="text" class="form-control" name="firstname" placeholder="Firstname" [(ngModel)]="firstname"
+            required minlength="4" #inputFirstname="ngModel">
+          <div *ngIf="inputFirstname.invalid && (inputFirstname.dirty || inputFirstname.touched)">
+            <div class="text-danger font-italic small" *ngIf="inputFirstname.errors.required">
+              Firstname is required!
+            </div>
+            <div class="text-danger font-italic small" *ngIf="inputFirstname.errors.minlength">
+              Firstname must be at least 2 characters long!
+            </div>
+          </div>
+          <label for="lastname">Lastname</label>
+          <input type="text" class="form-control" name="lastname" placeholder="Lastname" [(ngModel)]="lastname" required
+            minlength="1" #inputLastname="ngModel">
+          <div *ngIf="inputLastname.invalid && (inputLastname.dirty || inputLastname.touched)">
+            <div class="text-danger font-italic small" *ngIf="inputLastname.errors.required">
+              Lastname is required!
+            </div>
+            <div class="text-danger font-italic small" *ngIf="inputLastname.errors.minlength">
+              Lastname must be at least 2 characters long!
+            </div>
+          </div>
+          <label for="position">Position</label>
+          <input type="text" class="form-control" name="position" placeholder="Position" [(ngModel)]="position" required
+            minlength="1" #inputPosition="ngModel">
+          <div *ngIf="inputPosition.invalid && (inputPosition.dirty || inputPosition.touched)">
+            <div class="text-danger font-italic small" *ngIf="inputPosition.errors.required">
+              Position is required!
+            </div>
+          </div>
+          <label for="company">Company</label>
+          <input type="text" class="form-control" name="company" placeholder="Company" [(ngModel)]="company" required
+            minlength="1" #inputCompany="ngModel">
+          <div *ngIf="inputCompany.invalid && (inputCompany.dirty || inputCompany.touched)">
+            <div class="text-danger font-italic small" *ngIf="inputCompany.errors.required">
+              Company is required!
+            </div>
+          </div>
+          <!-- <button *ngIf="showCancel" class="cancel-button" (click)="cancel(); registrationForm.reset()">Cancel</button> -->
+          <div class="modal-footer">
+            <button class="btn btn-primary btnModal" [disabled]="!addForm.form.valid">Submit</button>
+            <button type="button" class="btn btn-danger btnModal" (click)="addForm.reset()"
+              data-dismiss="modal">Close</button>
+
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
 </div>

@@ -32,6 +32,11 @@ export const EVENTS = [
         position: 'IT Trainer/Volunteer',
         company: 'Passerelles numeriques'
       },
+      {
+        fullName: 'Mary Grace Tiburillo',
+        position: 'PN Students',
+        company: 'Passerelles numeriques'
+      },
     ],
     description: 'This is all about opportunities with Angular '
   },
@@ -96,7 +101,7 @@ export const EVENTS = [
         company: 'Passerelles numeriques'
       },
       {
-        fullName: 'Kristine Roxa',
+        fullName: 'Kristine Roxas',
         position: '3rd Year Educator',
         company: 'Passerelles numeriques'
       },
