@@ -1,6 +1,8 @@
 <div *ngIf="isViewing">
-    <div class="mycontainer" *ngFor="let event of events">
-        <app-event-details (id)="sendId($event)" [event]="event"></app-event-details>
-    </div>
+  <app-add-event (eventData)="addEvent($event)"></app-add-event>
+  <div class="mycontainer" *ngFor="let event of events">
+    <app-event-details (id)="sendId($event)" [event]="event"></app-event-details>
+  </div>
 </div>
-<app-participant-list  *ngIf="!isViewing" (back)="isViewing = $event" [event]= "event.participants"></app-participant-list>
+<app-participant-list *ngIf="!isViewing" (back)="isViewing = $event" [event]="event.participants">
+</app-participant-list>

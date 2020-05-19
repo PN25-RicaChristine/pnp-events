@@ -1,0 +1,55 @@
+<button class="add" type="button" data-toggle="modal" data-target="#myModal">Add New Event</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Event</h4>
+      </div>
+      <div class="modal-body content">
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+          <label>Name </label>
+          <input class="form-control" type="text" formControlName="name">
+          <label>Category </label>
+          <input class="form-control" type="text" formControlName="category">
+          <label>Speaker </label>
+          <input class="form-control" type="text" formControlName="speaker">
+          <label>Emcee </label>
+          <input class="form-control" type="text" formControlName="emcee">
+          <label>Time </label>
+          <input class="form-control" type="text" formControlName="time">
+          <label>Date </label>
+          <input class="form-control" type="date" formControlName="date">
+          <label>Duration </label>
+          <input class="form-control" type="number" formControlName="duration">
+          <label>Online URL </label>
+          <input class="form-control" type="text" formControlName="onlineUrl">
+          <label>Description </label>
+          <input class="form-control" type="text" formControlName="description">
+          <h4 class="center">Venue</h4>
+          <label>Address </label>
+          <input class="form-control" type="text" formControlName="address">
+          <label>Building </label>
+          <input class="form-control" type="text" formControlName="building">
+          <label>Room </label>
+          <input class="form-control" type="text" formControlName="room">
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+            <button type="button" class="btn btn-danger btnModal"
+              data-dismiss="modal">Close</button>
+
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

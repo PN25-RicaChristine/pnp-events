@@ -1,0 +1,26 @@
+.add {
+    border-radius: 10px;
+    background-color:  #03923a;
+    padding: 8px 15px 8px 15px;
+    color: white;
+    margin-bottom: 10px;
+    margin-left: 80%
+  }
+  .content{
+    padding: 25px 25px 0px 25px
+  }
+  .center{
+      margin-top: 15px;
+      text-align: center
+  }
+  input{
+    margin-bottom: 10px
+  }
+  .modal-header{
+      background-color: #1976d2;
+      color: white;
+      border-radius: 10px 10px 0px 0px;;
+  }
+  .modal-content{
+    border-radius: 10px;
+  }

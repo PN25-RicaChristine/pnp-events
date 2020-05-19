@@ -168,5 +168,27 @@ export class CardComponent implements OnInit {
     })
     this.isViewing = !this.isViewing
   }
+  addEvent(eventData){
+    var data = {
+      id: this.events.length,
+      name: eventData.name,
+      category: eventData.category,
+      speaker: eventData.speaker,
+      emcee: eventData.emcee,
+      time: eventData.time,
+      date: eventData.date,
+      duration: eventData.duration,
+      venue: {
+        address: eventData.address,
+        building: eventData.building,
+        room: eventData.room,
+      },
+      onlineUrl: eventData.onlineUrl,
+      participants:[],
+      description: eventData.description,
+    }
+    this.events.push(data)
+    console.log(data)
+  }
 
 }
